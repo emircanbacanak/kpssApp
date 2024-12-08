@@ -24,7 +24,7 @@ final List<Map<String, dynamic>> cumledeOgelerSorular = [
   {
     'soru': 'Cümlede Ögeler ile ilgili birinci soru nedir?',
     'cevaplar': [
-      'A) Özne',
+      'A) wined',
       'B) Yüklem',
       'C) Dolaylı Tümleç',
       'D) Zarf Tümleci',

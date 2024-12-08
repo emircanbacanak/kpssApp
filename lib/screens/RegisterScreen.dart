@@ -26,8 +26,7 @@ class RegisterScreen extends StatelessWidget {
                 const CustomTitle(titleText: 'Register'),
                 const SizedBox(height: 40),
                 CustomTextField(
-                    labelText: 'Name',
-                    onChanged: (value) {} // Kullanıcı ismi alınıyor
+                    labelText: 'Name', onChanged: (value) {} // Kullanıcı ismi
                     ),
                 const SizedBox(height: 20),
                 CustomTextField(
@@ -52,7 +51,6 @@ class RegisterScreen extends StatelessWidget {
                     text: "Already have an account? ",
                     linkText: "Login here",
                     onTap: () {
-                      // Get.back yerine route adıyla navigasyon yapılır
                       Get.back();
                     }),
                 const SizedBox(height: 40)

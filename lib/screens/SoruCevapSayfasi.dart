@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart'; // rootBundle için
+import 'package:flutter/services.dart';
 import 'package:kpssapp/ortak/SonucEkrani.dart';
 
 class SoruCevapSayfasi extends StatefulWidget {
@@ -151,7 +151,7 @@ class _SoruCevapSayfasiState extends State<SoruCevapSayfasi> {
         backgroundColor: Colors.teal,
         actions: [
           IconButton(
-            icon: const Icon(Icons.menu), // Sağ üstte üç çizgi simgesi
+            icon: const Icon(Icons.menu),
             onPressed: () {
               showModalBottomSheet(
                 context: context,
@@ -163,9 +163,9 @@ class _SoruCevapSayfasiState extends State<SoruCevapSayfasi> {
                         title: Text("Soru ${index + 1}"),
                         selected: _soruIndex == index,
                         onTap: () {
-                          Navigator.pop(context); // Açılır pencereyi kapat
+                          Navigator.pop(context);
                           setState(() {
-                            _soruIndex = index; // Seçilen soruya geç
+                            _soruIndex = index;
                           });
                         },
                       );

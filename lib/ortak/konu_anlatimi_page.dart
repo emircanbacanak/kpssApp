@@ -20,7 +20,7 @@ class KonuAnlatimiPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CustomTitle(titleText: title), // Ortak başlık bileşeni
+            CustomTitle(titleText: title),
             const SizedBox(height: 20),
             Text(content, style: const TextStyle(fontSize: 16)),
           ],

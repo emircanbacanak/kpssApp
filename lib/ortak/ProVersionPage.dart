@@ -8,7 +8,7 @@ class ProVersionPage extends StatefulWidget {
 }
 
 class _ProVersionPageState extends State<ProVersionPage> {
-  String selectedPlan = "YILLIK"; // Varsayılan seçili plan
+  String selectedPlan = "YILLIK";
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,6 @@ class _ProVersionPageState extends State<ProVersionPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Üst Başlık ve Açıklamalar
               const Text(
                 "Pro Versiyon Avantajları",
                 style: TextStyle(
@@ -60,7 +59,6 @@ class _ProVersionPageState extends State<ProVersionPage> {
               ),
               const SizedBox(height: 30),
 
-              // Abonelik Planları
               const Text(
                 "Planlar",
                 style: TextStyle(
@@ -93,7 +91,6 @@ class _ProVersionPageState extends State<ProVersionPage> {
               ),
               const SizedBox(height: 16),
 
-              // Yıllık Kart
               GestureDetector(
                 onTap: () {
                   setState(() {
@@ -116,11 +113,9 @@ class _ProVersionPageState extends State<ProVersionPage> {
               ),
               const SizedBox(height: 30),
 
-              // Alt Buton
               Center(
                 child: ElevatedButton(
                   onPressed: () {
-                    // Ödeme işlemi için seçili plan
                     print("Seçilen Plan: $selectedPlan");
                   },
                   style: ElevatedButton.styleFrom(
@@ -148,7 +143,6 @@ class _ProVersionPageState extends State<ProVersionPage> {
   }
 }
 
-// Tekil Özellik Liste Öğesi
 class _FeatureItem extends StatelessWidget {
   final String text;
   const _FeatureItem({required this.text});
@@ -207,7 +201,6 @@ class SubscriptionCard extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              // Sol taraf
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -232,7 +225,7 @@ class SubscriptionCard extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  const SizedBox(height: 16), // Önerilen etiketi için alan açar
+                  const SizedBox(height: 16),
                   Text(
                     price,
                     style: const TextStyle(
@@ -246,11 +239,10 @@ class SubscriptionCard extends StatelessWidget {
             ],
           ),
         ),
-        // Önerilen Etiketi
         if (isRecommended)
           Positioned(
-            top: 15, // Hafif üst pozisyonlama
-            right: 16, // Kartın sağ üst köşesine hizalama
+            top: 15,
+            right: 16,
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
               decoration: BoxDecoration(

@@ -15,8 +15,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final DateTime examDate =
-      DateTime.utc(2024, 12, 8, 15, 00); // UTC kullanıyoruz
+  final DateTime examDate = DateTime.utc(2024, 12, 8, 15, 00);
   late Timer _timer;
   Duration remainingTime = Duration.zero;
 
@@ -31,9 +30,8 @@ class _HomePageState extends State<HomePage> {
 
   void _updateRemainingTime() {
     setState(() {
-      final now = DateTime.now(); // Yerel zaman
-      remainingTime =
-          examDate.difference(now); // Yerel saatte kalan süreyi hesapla
+      final now = DateTime.now(); //şimdiki zaman
+      remainingTime = examDate.difference(now);
       if (remainingTime.isNegative) {
         remainingTime = Duration.zero;
       }

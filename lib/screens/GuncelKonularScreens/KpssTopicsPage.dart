@@ -60,7 +60,7 @@ class KpssTopicsPage extends StatelessWidget {
                             ),
                           );
                         } else {
-                          // Sayfa yoksa kullanıcıya bilgi verebiliriz
+                          // Sayfa yoksa
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(
                               content: Text(

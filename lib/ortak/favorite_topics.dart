@@ -26,11 +26,9 @@ import '../screens/GuncelKonularScreens/kpssTurkceSayfalar/kpssYazimKurallari/Kp
 class FavoriteTopics {
   static const String _favoritesKey = 'favorite_topics';
   static List<Map<String, dynamic>> _favorites = [];
-
-  // Getter: Favori konuları döndür
   static List<Map<String, dynamic>> get favorites => _favorites;
 
-  /// Favorileri cihaz hafızasından yükle
+  // favorileri cihaz hafızasından yükleme yeri
   static Future<void> loadFavorites() async {
     final prefs = await SharedPreferences.getInstance();
     final String? favoritesString = prefs.getString(_favoritesKey);
@@ -40,14 +38,14 @@ class FavoriteTopics {
     }
   }
 
-  /// Favorileri cihaz hafızasına kaydet
+  // Favorileri cihaz hafızasına kaydet
   static Future<void> saveFavorites() async {
     final prefs = await SharedPreferences.getInstance();
     final String favoritesString = jsonEncode(_favorites);
     await prefs.setString(_favoritesKey, favoritesString);
   }
 
-  /// Bir konuyu favorilere ekleme veya çıkarma
+  // Bir konuyu favorilere ekleme veya çıkarma
   static Future<void> toggleFavorite(Map<String, dynamic> topic) async {
     final String title = topic['title'];
     if (_favorites.any((fav) => fav['title'] == title)) {
@@ -58,12 +56,12 @@ class FavoriteTopics {
     await saveFavorites();
   }
 
-  /// Konunun favori olup olmadığını kontrol et
+  // Konunun favori olup olmadığını kontrol et
   static bool isFavorite(String title) {
     return _favorites.any((topic) => topic['title'] == title);
   }
 
-  /// `pageName` değerine göre ilgili widget'ı döndür
+  // `pageName` değerine göre ilgili widget'ı döndür
   static Widget getPageWidget(String pageName) {
     switch (pageName) {
       // Türkçe sayfalar
@@ -102,15 +100,15 @@ class FavoriteTopics {
       case 'KpssAnayasaHukukuPage':
         return const KpssAnayasaHukukuPage();
       case 'KpssIdareHukukuPage':
-        return KpssIdareHukukuPage();
+        return const KpssIdareHukukuPage();
       case 'KpssCezaHukukuPage':
-        return KpssCezaHukukuPage();
+        return const KpssCezaHukukuPage();
       case 'KpssMedeniHukukPage':
-        return KpssMedeniHukukPage();
+        return const KpssMedeniHukukPage();
       case 'EkonomiPage':
-        return EkonomiPage();
+        return const EkonomiPage();
 
-      // Sayfa bulunamadığında
+      // Sayfa yoksa
       default:
         return const Scaffold(
           body: Center(

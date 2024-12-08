@@ -16,10 +16,9 @@ class _FavoritesPageState extends State<FavoritesPage> {
     _loadFavorites();
   }
 
-  // Favori listesini yükleme
   Future<void> _loadFavorites() async {
     await FavoriteTopics.loadFavorites();
-    setState(() {}); // Favoriler yüklendiğinde ekranı yenile
+    setState(() {});
   }
 
   @override

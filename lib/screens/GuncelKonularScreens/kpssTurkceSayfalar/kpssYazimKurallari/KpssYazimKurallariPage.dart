@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:kpssapp/ortak/common_widgets.dart';
 import 'package:kpssapp/ortak/custom_title.dart';
 
-import '../../../../ortak/common_widgets.dart';
 import 'yazimKurallariPages/KpssBaglaclarinYazimiPage.dart';
 import 'yazimKurallariPages/KpssBuyukHarfKullanimiPage.dart';
 import 'yazimKurallariPages/KpssEklerinYazimiPage.dart';
