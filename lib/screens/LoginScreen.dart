@@ -35,15 +35,26 @@ class LoginScreen extends StatelessWidget {
                     onChanged: (value) =>
                         authController.password.value = value),
                 const SizedBox(height: 20),
-                CustomButton(
-                    buttonText: 'Login',
-                    buttonColor: Colors.tealAccent[100] ?? Colors.tealAccent,
-                    textColor: Colors.black,
-                    onPressed: () {
-                      authController.login();
-                      // Başarılı giriş sonrası home screen'e yönlendir
-                      Get.toNamed('/home');
-                    }),
+                Obx(() {
+                  if (authController.isLoggedIn.value) {
+                    Future.microtask(() => Get.toNamed('/home'));
+                    return Container();
+                  } else {
+                    return CustomButton(
+                      buttonText: 'Login',
+                      buttonColor: Colors.tealAccent[100] ?? Colors.tealAccent,
+                      textColor: Colors.black,
+                      onPressed: () {
+                        authController.login();
+                        if (authController.isLoggedIn.value) {
+                          Get.toNamed('/home');
+                        } else {
+                          Get.snackbar('Hata', 'Geçersiz email veya şifre.');
+                        }
+                      },
+                    );
+                  }
+                }),
                 const SizedBox(height: 20),
                 CustomLinkText(
                     text: "Don't have an account? ",

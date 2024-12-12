@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../ortak/favorite_topics.dart';
+import 'package:kpssapp/ortak/favorite_topics.dart';
 
 class FavoritesPage extends StatefulWidget {
   const FavoritesPage({super.key});

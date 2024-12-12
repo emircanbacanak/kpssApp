@@ -40,7 +40,7 @@ class _SoruCevapSayfasiState extends State<SoruCevapSayfasi> {
         .replaceAll('ş', 's')
         .replaceAll('ü', 'u');
 
-    return 'assets/${altKonuAdi}${_soruIndex + 1}.jpeg';
+    return 'assets/$altKonuAdi${_soruIndex + 1}.jpeg';
   }
 
   Future<bool> _isResimVar(String resimAdi) async {
@@ -63,10 +63,7 @@ class _SoruCevapSayfasiState extends State<SoruCevapSayfasi> {
             return Container(
               height: 200,
               alignment: Alignment.center,
-              child: Image.asset(
-                resimAdi,
-                fit: BoxFit.contain,
-              ),
+              child: Image.asset(resimAdi, fit: BoxFit.contain),
             );
           }
           return const SizedBox.shrink();
@@ -212,10 +209,7 @@ class _SoruCevapSayfasiState extends State<SoruCevapSayfasi> {
                             : Colors.grey.shade300,
                         borderRadius: BorderRadius.circular(8.0),
                       ),
-                      child: Text(
-                        cevap,
-                        style: const TextStyle(fontSize: 16),
-                      ),
+                      child: Text(cevap, style: const TextStyle(fontSize: 16)),
                     ),
                   );
                 }).toList(),
@@ -224,20 +218,15 @@ class _SoruCevapSayfasiState extends State<SoruCevapSayfasi> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     ElevatedButton(
-                      onPressed: _oncekiSoru,
-                      child: const Text("Önceki"),
-                    ),
+                        onPressed: _oncekiSoru, child: const Text("Önceki")),
                     ElevatedButton(
                       onPressed: _bosBirak,
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.grey,
-                      ),
+                          backgroundColor: Colors.grey),
                       child: const Text("Boş Bırak"),
                     ),
                     ElevatedButton(
-                      onPressed: _sonrakiSoru,
-                      child: const Text("Sonraki"),
-                    ),
+                        onPressed: _sonrakiSoru, child: const Text("Sonraki")),
                   ],
                 ),
               ],

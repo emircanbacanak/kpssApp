@@ -3,15 +3,29 @@ import 'package:get/get.dart';
 class AuthController extends GetxController {
   var email = ''.obs;
   var password = ''.obs;
+  var isLoggedIn = false.obs;
 
   void login() {
-    // Burada login işlemleri
-    print('Login with Email: ${email.value} and Password: ${password.value}');
+    if (email.value == 'test@example.com' && password.value == 'password') {
+      isLoggedIn.value = true;
+      Get.snackbar('Başarılı', 'Giriş yapıldı!');
+    } else {
+      isLoggedIn.value = false;
+      Get.snackbar('Hata', 'Geçersiz email veya şifre.');
+    }
   }
 
   void register() {
-    // Burada kayıt işlemleri
-    print(
-        'Register with Email: ${email.value} and Password: ${password.value}');
+    if (email.value.isNotEmpty && password.value.isNotEmpty) {
+      isLoggedIn.value = true;
+      Get.snackbar('Başarılı', 'Kayıt olundu!');
+    } else {
+      Get.snackbar('Hata', 'Email ve şifre boş olamaz.');
+    }
+  }
+
+  void logout() {
+    isLoggedIn.value = false;
+    Get.snackbar('Başarılı', 'Çıkış yapıldı!');
   }
 }

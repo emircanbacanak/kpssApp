@@ -1,27 +1,26 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:kpssapp/screens/GuncelKonularScreens/kpssAlanBilgisiSayfalar/kpssAnayasaHukuku/KpssAnayasaHukukuPage.dart';
+import 'package:kpssapp/screens/GuncelKonularScreens/kpssAlanBilgisiSayfalar/kpssCezaHukuku/KpssCezaHukukuPage.dart';
+import 'package:kpssapp/screens/GuncelKonularScreens/kpssAlanBilgisiSayfalar/kpssEkonomiPage/KpssEkonomiPage.dart';
+import 'package:kpssapp/screens/GuncelKonularScreens/kpssAlanBilgisiSayfalar/kpssIdareHukuku/KpssIdareHukuku.dart';
+import 'package:kpssapp/screens/GuncelKonularScreens/kpssAlanBilgisiSayfalar/kpssMedeniHukuk/KpssMedeniHukukPage.dart';
+import 'package:kpssapp/screens/GuncelKonularScreens/kpssMatematikSayfalar/kpssCebir/KpssCebirPage.dart';
+import 'package:kpssapp/screens/GuncelKonularScreens/kpssMatematikSayfalar/kpssFonksiyonlar/KpssFonksiyonlarPage.dart';
+import 'package:kpssapp/screens/GuncelKonularScreens/kpssMatematikSayfalar/kpssGeometri/KpssGeometriPage.dart';
+import 'package:kpssapp/screens/GuncelKonularScreens/kpssMatematikSayfalar/kpssProblemler/KpssProblemlerPage.dart';
+import 'package:kpssapp/screens/GuncelKonularScreens/kpssMatematikSayfalar/kpssSayilar/KpssSayilarPage.dart';
+import 'package:kpssapp/screens/GuncelKonularScreens/kpssMatematikSayfalar/kpssTemelKavramlar/KpssTemelKavramlarPage.dart';
+import 'package:kpssapp/screens/GuncelKonularScreens/kpssMatematikSayfalar/kpssTemelKavramlar/temelKavramlarPages/KpssTamSayilarPage.dart';
+import 'package:kpssapp/screens/GuncelKonularScreens/kpssTurkceSayfalar/kpssCumleBilgisi/KpssCumleBilgisiPage.dart';
+import 'package:kpssapp/screens/GuncelKonularScreens/kpssTurkceSayfalar/kpssDilBilgisi/KpssDilBilgisiPage.dart';
+import 'package:kpssapp/screens/GuncelKonularScreens/kpssTurkceSayfalar/kpssEdebiTerimler/KpssEdebiTerimlerPage.dart';
+import 'package:kpssapp/screens/GuncelKonularScreens/kpssTurkceSayfalar/kpssOkumaAnlama/KpssOkumaAnlamaPage.dart';
+import 'package:kpssapp/screens/GuncelKonularScreens/kpssTurkceSayfalar/kpssParagraf/KpssParagrafPage.dart';
+import 'package:kpssapp/screens/GuncelKonularScreens/kpssTurkceSayfalar/kpssSozSanatlar%C4%B1/KpssSozSanatlariPage.dart';
+import 'package:kpssapp/screens/GuncelKonularScreens/kpssTurkceSayfalar/kpssYazimKurallari/KpssYazimKurallariPage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import '../screens/GuncelKonularScreens/kpssAlanBilgisiSayfalar/kpssAnayasaHukuku/KpssAnayasaHukukuPage.dart';
-import '../screens/GuncelKonularScreens/kpssAlanBilgisiSayfalar/kpssCezaHukuku/KpssCezaHukukuPage.dart';
-import '../screens/GuncelKonularScreens/kpssAlanBilgisiSayfalar/kpssEkonomiPage/KpssEkonomiPage.dart';
-import '../screens/GuncelKonularScreens/kpssAlanBilgisiSayfalar/kpssIdareHukuku/KpssIdareHukuku.dart';
-import '../screens/GuncelKonularScreens/kpssAlanBilgisiSayfalar/kpssMedeniHukuk/KpssMedeniHukukPage.dart';
-import '../screens/GuncelKonularScreens/kpssMatematikSayfalar/kpssCebir/KpssCebirPage.dart';
-import '../screens/GuncelKonularScreens/kpssMatematikSayfalar/kpssFonksiyonlar/KpssFonksiyonlarPage.dart';
-import '../screens/GuncelKonularScreens/kpssMatematikSayfalar/kpssGeometri/KpssGeometriPage.dart';
-import '../screens/GuncelKonularScreens/kpssMatematikSayfalar/kpssProblemler/KpssProblemlerPage.dart';
-import '../screens/GuncelKonularScreens/kpssMatematikSayfalar/kpssSayilar/KpssSayilarPage.dart';
-import '../screens/GuncelKonularScreens/kpssMatematikSayfalar/kpssTemelKavramlar/KpssTemelKavramlarPage.dart';
-import '../screens/GuncelKonularScreens/kpssMatematikSayfalar/kpssTemelKavramlar/temelKavramlarPages/KpssTamSayilarPage.dart';
-import '../screens/GuncelKonularScreens/kpssTurkceSayfalar/kpssCumleBilgisi/KpssCumleBilgisiPage.dart';
-import '../screens/GuncelKonularScreens/kpssTurkceSayfalar/kpssDilBilgisi/KpssDilBilgisiPage.dart';
-import '../screens/GuncelKonularScreens/kpssTurkceSayfalar/kpssEdebiTerimler/KpssEdebiTerimlerPage.dart';
-import '../screens/GuncelKonularScreens/kpssTurkceSayfalar/kpssOkumaAnlama/KpssOkumaAnlamaPage.dart';
-import '../screens/GuncelKonularScreens/kpssTurkceSayfalar/kpssParagraf/KpssParagrafPage.dart';
-import '../screens/GuncelKonularScreens/kpssTurkceSayfalar/kpssSozSanatları/KpssSozSanatlariPage.dart';
-import '../screens/GuncelKonularScreens/kpssTurkceSayfalar/kpssYazimKurallari/KpssYazimKurallariPage.dart';
 
 class FavoriteTopics {
   static const String _favoritesKey = 'favorite_topics';

@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:kpssapp/ortak/common_widgets.dart';
 import 'package:kpssapp/ortak/custom_title.dart';
-
-import 'cumleBilgisiPages/KpssCumledeAnlamIliskileriPage.dart';
-import 'cumleBilgisiPages/KpssCumledeAnlamPage.dart';
-import 'cumleBilgisiPages/KpssCumledeBicimPage.dart';
-import 'cumleBilgisiPages/KpssCumledeOgelerPage.dart';
-import 'cumleBilgisiPages/KpssCumledeYargiPage.dart';
+import 'package:kpssapp/screens/GuncelKonularScreens/kpssTurkceSayfalar/kpssCumleBilgisi/cumleBilgisiPages/KpssCumledeAnlamIliskileriPage.dart';
+import 'package:kpssapp/screens/GuncelKonularScreens/kpssTurkceSayfalar/kpssCumleBilgisi/cumleBilgisiPages/KpssCumledeAnlamPage.dart';
+import 'package:kpssapp/screens/GuncelKonularScreens/kpssTurkceSayfalar/kpssCumleBilgisi/cumleBilgisiPages/KpssCumledeBicimPage.dart';
+import 'package:kpssapp/screens/GuncelKonularScreens/kpssTurkceSayfalar/kpssCumleBilgisi/cumleBilgisiPages/KpssCumledeOgelerPage.dart';
+import 'package:kpssapp/screens/GuncelKonularScreens/kpssTurkceSayfalar/kpssCumleBilgisi/cumleBilgisiPages/KpssCumledeYargiPage.dart';
 
 class KpssCumleBilgisiPage extends StatelessWidget {
   const KpssCumleBilgisiPage({super.key});
@@ -30,13 +29,11 @@ class KpssCumleBilgisiPage extends StatelessWidget {
           backgroundColor: Colors.teal),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const CustomTitle(titleText: 'KPSS Cümle Bilgisi Konuları'),
-            const SizedBox(height: 20),
-            Expanded(
-              child: ListView.builder(
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          const CustomTitle(titleText: 'KPSS Cümle Bilgisi Konuları'),
+          const SizedBox(height: 20),
+          Expanded(
+            child: ListView.builder(
                 itemCount: cumleBilgisiTopics.length,
                 itemBuilder: (context, index) {
                   String topic = cumleBilgisiTopics[index]['title'];
@@ -53,11 +50,9 @@ class KpssCumleBilgisiPage extends StatelessWidget {
                       },
                     ),
                   );
-                },
-              ),
-            ),
-          ],
-        ),
+                }),
+          ),
+        ]),
       ),
     );
   }

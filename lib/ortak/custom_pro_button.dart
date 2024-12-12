@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'ProVersionPage.dart'; // Yeni sayfa dosyasını import edin.
+import 'package:kpssapp/ortak/ProVersionPage.dart';
 
 class ProButton extends StatelessWidget {
   const ProButton({super.key, required Null Function() onPressed});

@@ -48,8 +48,7 @@ class _ProVersionPageState extends State<ProVersionPage> {
                     _FeatureItem(text: "• Daha fazla konu anlatım"),
                     _FeatureItem(text: "• Eksik Konu Analizi"),
                     _FeatureItem(text: "• Güçlü Soru Havuzu"),
-                    _FeatureItem(
-                        text: "• Yanlış Sorulardan Deneme Sınavı Oluşturma"),
+                    _FeatureItem(text: "• Yanlış Sorulardan Deneme Sınavı"),
                     _FeatureItem(text: "• En Güncel Olaylar"),
                     _FeatureItem(text: "• KPSS - MEMURLUK üzerine haberler"),
                     _FeatureItem(text: "• KPSS PUAN HESAPLAMA"),
@@ -58,7 +57,6 @@ class _ProVersionPageState extends State<ProVersionPage> {
                 ),
               ),
               const SizedBox(height: 30),
-
               const Text(
                 "Planlar",
                 style: TextStyle(
@@ -68,8 +66,6 @@ class _ProVersionPageState extends State<ProVersionPage> {
                 ),
               ),
               const SizedBox(height: 16),
-
-              // Aylık Kart
               GestureDetector(
                 onTap: () {
                   setState(() {
@@ -90,7 +86,6 @@ class _ProVersionPageState extends State<ProVersionPage> {
                 ),
               ),
               const SizedBox(height: 16),
-
               GestureDetector(
                 onTap: () {
                   setState(() {
@@ -112,7 +107,6 @@ class _ProVersionPageState extends State<ProVersionPage> {
                 ),
               ),
               const SizedBox(height: 30),
-
               Center(
                 child: ElevatedButton(
                   onPressed: () {
@@ -159,7 +153,6 @@ class _FeatureItem extends StatelessWidget {
   }
 }
 
-// Abonelik Kartı
 class SubscriptionCard extends StatelessWidget {
   final String title;
   final String price;

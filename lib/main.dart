@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import 'controllers/auth_controller.dart';
-import 'ortak/favorite_topics.dart';
-import 'screens/LoginScreen.dart';
-import 'screens/MainScreen.dart';
-import 'screens/RegisterScreen.dart';
+import 'package:kpssapp/controllers/auth_controller.dart';
+import 'package:kpssapp/ortak/favorite_topics.dart';
+import 'package:kpssapp/screens/LoginScreen.dart';
+import 'package:kpssapp/screens/MainScreen.dart';
+import 'package:kpssapp/screens/RegisterScreen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

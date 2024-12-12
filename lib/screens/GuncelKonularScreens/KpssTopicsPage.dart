@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:kpssapp/ortak/common_widgets.dart';
 import 'package:kpssapp/ortak/custom_title.dart';
+import 'package:kpssapp/screens/GuncelKonularScreens/kpssAlanBilgisiSayfalar/KpssAlanBilgisiPage.dart';
 import 'package:kpssapp/screens/GuncelKonularScreens/kpssCografyaSayfalar/KpssCografyaPage.dart';
-
-import 'kpssAlanBilgisiSayfalar/KpssAlanBilgisiPage.dart';
-import 'kpssEgitimBilimleriSayfalar/KpssEgitimBilimleriPage.dart';
-import 'kpssGenelKulturSayfalar/KpssGenelKulturPage.dart';
-import 'kpssGenelYetenekSayfalar/KpssGenelYetenekPage.dart';
-import 'kpssMatematikSayfalar/KpssMatematikPage.dart';
-import 'kpssTarihSayfalar/KpssTarihPage.dart';
-import 'kpssTurkceSayfalar/KpssTurkcePage.dart';
-import 'kpssVatandaslikSayfalar/KpssVatandaslikPage.dart';
+import 'package:kpssapp/screens/GuncelKonularScreens/kpssEgitimBilimleriSayfalar/KpssEgitimBilimleriPage.dart';
+import 'package:kpssapp/screens/GuncelKonularScreens/kpssGenelKulturSayfalar/KpssGenelKulturPage.dart';
+import 'package:kpssapp/screens/GuncelKonularScreens/kpssGenelYetenekSayfalar/KpssGenelYetenekPage.dart';
+import 'package:kpssapp/screens/GuncelKonularScreens/kpssMatematikSayfalar/KpssMatematikPage.dart';
+import 'package:kpssapp/screens/GuncelKonularScreens/kpssTarihSayfalar/KpssTarihPage.dart';
+import 'package:kpssapp/screens/GuncelKonularScreens/kpssTurkceSayfalar/KpssTurkcePage.dart';
+import 'package:kpssapp/screens/GuncelKonularScreens/kpssVatandaslikSayfalar/KpssVatandaslikPage.dart';
 
 class KpssTopicsPage extends StatelessWidget {
   const KpssTopicsPage({super.key});

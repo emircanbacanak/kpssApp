@@ -1,11 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-
-import '../../ortak/custom_button.dart';
-import '../../ortak/custom_pro_button.dart';
-import '../../ortak/custom_title.dart';
-import '../GuncelKonularScreens/KpssTopicsPage.dart';
+import 'package:kpssapp/ortak/custom_button.dart';
+import 'package:kpssapp/ortak/custom_pro_button.dart';
+import 'package:kpssapp/ortak/custom_title.dart';
+import 'package:kpssapp/screens/GuncelKonularScreens/KpssTopicsPage.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -83,8 +82,7 @@ class _HomePageState extends State<HomePage> {
                     onPressed: () {
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(
-                          content: Text('Deneme sınavı henüz eklenmedi!'),
-                        ),
+                            content: Text('Deneme sınavı henüz eklenmedi!')),
                       );
                     },
                   ),
@@ -98,9 +96,7 @@ class _HomePageState extends State<HomePage> {
             child: ProButton(
               onPressed: () {
                 ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text('Pro butona basıldı!'),
-                  ),
+                  const SnackBar(content: Text('Pro butona basıldı!')),
                 );
               },
             ),
