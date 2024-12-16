@@ -12,7 +12,6 @@ class RegisterScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey[300],
       body: SingleChildScrollView(
-        // Kaydırılabilir içerik
         child: Center(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 46.0),
@@ -20,7 +19,7 @@ class RegisterScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(height: 80), // Üstten biraz boşluk bırakıyoruz
+                const SizedBox(height: 80),
                 const Center(
                   child: Text(
                     "KAYIT OL",
@@ -74,7 +73,7 @@ class RegisterScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height: 50), // Alt kısımda boşluk bırakıyoruz
+                const SizedBox(height: 50),
               ],
             ),
           ),
@@ -111,8 +110,8 @@ class RegisterScreen extends StatelessWidget {
       decoration: BoxDecoration(
         gradient: const LinearGradient(
           colors: [
-            Color(0xFFFF00FF), // Pembe
-            Color(0xFF00FFFF), // Cyan
+            Color(0xFFFF00FF),
+            Color(0xFF00FFFF),
           ],
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,

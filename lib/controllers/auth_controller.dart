@@ -6,7 +6,7 @@ class AuthController extends GetxController {
   var isLoggedIn = false.obs;
 
   void login() {
-    if (email.value == 'test@example.com' && password.value == 'password') {
+    if (email.value == '' && password.value == '') {
       isLoggedIn.value = true;
       Get.snackbar('Başarılı', 'Giriş yapıldı!');
     } else {

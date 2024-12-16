@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kpssapp/screens/PaymentScreen.dart';
 
 class ProVersionPage extends StatefulWidget {
   const ProVersionPage({super.key});
@@ -110,7 +111,8 @@ class _ProVersionPageState extends State<ProVersionPage> {
               Center(
                 child: ElevatedButton(
                   onPressed: () {
-                    print("Seçilen Plan: $selectedPlan");
+                    showPaymentScreen(context, selectedPlan,
+                        selectedPlan == "AYLIK" ? "20 TL" : "200 TL");
                   },
                   style: ElevatedButton.styleFrom(
                     elevation: 8,

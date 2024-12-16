@@ -78,8 +78,7 @@ class LoginScreen extends StatelessWidget {
                 onPressed: () {
                   authController.login();
                   if (authController.isLoggedIn.value) {
-                    // Giriş başarılıysa home sayfasına git
-                    Get.offAllNamed('/home'); // Home sayfasına yönlendirme
+                    Get.offAllNamed('/home');
                   }
                 },
               ),
@@ -97,9 +96,7 @@ class LoginScreen extends StatelessWidget {
   }) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.black,
-        borderRadius: BorderRadius.circular(20),
-      ),
+          color: Colors.black, borderRadius: BorderRadius.circular(20)),
       child: TextField(
         obscureText: isPassword,
         style: const TextStyle(color: Colors.white),
@@ -139,10 +136,8 @@ class LoginScreen extends StatelessWidget {
         ),
         child: Text(
           text,
-          style: const TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-          ),
+          style:
+              const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
       ),
     );
