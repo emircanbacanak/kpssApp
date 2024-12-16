@@ -85,7 +85,7 @@ class _TopicCardState extends State<TopicCard>
                 color: Colors.grey.withOpacity(0.3),
                 spreadRadius: 3,
                 blurRadius: 6,
-                offset: const Offset(0, 4)),
+                offset: const Offset(0, 4))
           ],
         ),
         child: ListTile(
