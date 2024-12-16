@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kpssapp/controllers/auth_controller.dart';
 
-class LoginScreen extends StatelessWidget {
+class ForgotPasswordScreen extends StatelessWidget {
   final AuthController authController = Get.find<AuthController>();
 
-  LoginScreen({super.key});
+  ForgotPasswordScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class LoginScreen extends StatelessWidget {
             children: [
               const Center(
                 child: Text(
-                  "GİRİŞ YAP",
+                  "ŞİFREMİ UNUTTUM",
                   style: TextStyle(
                     fontSize: 28,
                     fontWeight: FontWeight.bold,
@@ -34,54 +34,32 @@ class LoginScreen extends StatelessWidget {
                 isPassword: false,
                 onChanged: (value) => authController.email.value = value,
               ),
-              const SizedBox(height: 15),
-              _customInputField(
-                label: "Password",
-                isPassword: true,
-                onChanged: (value) => authController.password.value = value,
-              ),
-              const SizedBox(height: 15),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  GestureDetector(
-                    onTap: () {
-                      Get.toNamed('/forgot_password');
-                    },
-                    child: const Text(
-                      "Şifremi Unuttum",
-                      style: TextStyle(
-                        color: Colors.cyan,
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Get.toNamed('/register');
-                    },
-                    child: const Text(
-                      "Kayıt Ol",
-                      style: TextStyle(
-                        color: Colors.cyan,
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
               const SizedBox(height: 30),
               _gradientButton(
-                text: "Giriş Yap",
+                text: "Şifremi Sıfırla",
                 onPressed: () {
-                  authController.login();
-                  if (authController.isLoggedIn.value) {
-                    // Giriş başarılıysa home sayfasına git
-                    Get.offAllNamed('/home'); // Home sayfasına yönlendirme
+                  if (authController.email.value.isNotEmpty) {
+                    Get.snackbar(
+                        'Başarılı', 'Şifre sıfırlama linki gönderildi!');
+                  } else {
+                    Get.snackbar(
+                        'Hata', 'Lütfen geçerli bir email adresi girin.');
                   }
                 },
+              ),
+              const SizedBox(height: 15),
+              GestureDetector(
+                onTap: () {
+                  Get.back();
+                },
+                child: const Text(
+                  "Geri",
+                  style: TextStyle(
+                    color: Colors.cyan,
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
             ],
           ),

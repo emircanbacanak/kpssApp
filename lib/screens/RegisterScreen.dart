@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kpssapp/controllers/auth_controller.dart';
-import 'package:kpssapp/ortak/custom_button.dart';
-import 'package:kpssapp/ortak/custom_link_text.dart';
-import 'package:kpssapp/ortak/custom_text_field.dart';
-import 'package:kpssapp/ortak/custom_title.dart';
 
 class RegisterScreen extends StatelessWidget {
   final AuthController authController = Get.find<AuthController>();
@@ -14,48 +10,126 @@ class RegisterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.grey[300],
       body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Center(
+        // Kaydırılabilir içerik
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 46.0),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(height: 60),
-                const CustomTitle(titleText: 'Register'),
-                const SizedBox(height: 40),
-                CustomTextField(
-                    labelText: 'Name', onChanged: (value) {} // Kullanıcı ismi
+                const SizedBox(height: 80), // Üstten biraz boşluk bırakıyoruz
+                const Center(
+                  child: Text(
+                    "KAYIT OL",
+                    style: TextStyle(
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
                     ),
-                const SizedBox(height: 20),
-                CustomTextField(
-                    labelText: 'Email',
-                    onChanged: (value) => authController.email.value = value),
-                const SizedBox(height: 20),
-                CustomTextField(
-                    labelText: 'Password',
-                    isPassword: true,
-                    onChanged: (value) =>
-                        authController.password.value = value),
-                const SizedBox(height: 20),
-                CustomButton(
-                    buttonText: 'Register',
-                    buttonColor: Colors.tealAccent[100] ?? Colors.tealAccent,
-                    textColor: Colors.black,
-                    onPressed: () {
-                      authController.register();
-                    }),
-                const SizedBox(height: 20),
-                CustomLinkText(
-                    text: "Already have an account? ",
-                    linkText: "Login here",
-                    onTap: () {
-                      Get.back();
-                    }),
-                const SizedBox(height: 40)
+                  ),
+                ),
+                const SizedBox(height: 30),
+                _customInputField(
+                  label: "Name",
+                  isPassword: false,
+                ),
+                const SizedBox(height: 15),
+                _customInputField(
+                  label: "Email",
+                  isPassword: false,
+                ),
+                const SizedBox(height: 15),
+                _customInputField(
+                  label: "Password",
+                  isPassword: true,
+                ),
+                const SizedBox(height: 15),
+                _customInputField(
+                  label: "Confirm Password",
+                  isPassword: true,
+                ),
+                const SizedBox(height: 30),
+                _gradientButton(
+                  text: "Kayıt Ol",
+                  onPressed: () {
+                    authController.register();
+                  },
+                ),
+                const SizedBox(height: 15),
+                GestureDetector(
+                  onTap: () {
+                    Get.back();
+                  },
+                  child: const Center(
+                    child: Text(
+                      "Zaten hesabın var mı? Giriş Yap",
+                      style: TextStyle(
+                        color: Colors.cyan,
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 50), // Alt kısımda boşluk bırakıyoruz
               ],
             ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _customInputField({required String label, required bool isPassword}) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.black,
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: TextField(
+        obscureText: isPassword,
+        style: const TextStyle(color: Colors.white),
+        decoration: InputDecoration(
+          hintText: label,
+          hintStyle: const TextStyle(color: Colors.grey),
+          border: InputBorder.none,
+          contentPadding:
+              const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        ),
+      ),
+    );
+  }
+
+  Widget _gradientButton(
+      {required String text, required VoidCallback onPressed}) {
+    return Container(
+      width: double.infinity,
+      height: 50,
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          colors: [
+            Color(0xFFFF00FF), // Pembe
+            Color(0xFF00FFFF), // Cyan
+          ],
+          begin: Alignment.centerLeft,
+          end: Alignment.centerRight,
+        ),
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: ElevatedButton(
+        onPressed: onPressed,
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.transparent,
+          shadowColor: Colors.transparent,
+        ),
+        child: Text(
+          text,
+          style: const TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
           ),
         ),
       ),

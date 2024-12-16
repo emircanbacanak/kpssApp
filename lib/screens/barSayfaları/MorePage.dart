@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:kpssapp/controllers/auth_controller.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class MorePage extends StatefulWidget {
@@ -79,7 +81,11 @@ class _MorePageState extends State<MorePage> {
               const SizedBox(height: 20),
               _buildListTile('Ayarlar', Icons.settings, () {}),
               _buildListTile('Yardım & Destek', Icons.help, () {}),
-              _buildListTile('Çıkış Yap', Icons.logout, () {}),
+              _buildListTile('Çıkış Yap', Icons.logout, () {
+                final authController = Get.find<AuthController>();
+                authController.logout();
+                Get.offAllNamed('/login');
+              }),
             ],
           ),
         ),
