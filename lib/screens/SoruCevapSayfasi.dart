@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:kpssapp/ortak/SonucEkrani.dart';
+import 'package:kpssapp/screens/SonucEkrani.dart';
 
 class SoruCevapSayfasi extends StatefulWidget {
   final String konuAdi;

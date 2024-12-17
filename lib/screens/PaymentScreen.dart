@@ -15,9 +15,9 @@ class PaymentScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Colors.white,
-        borderRadius: const BorderRadius.vertical(
+        borderRadius: BorderRadius.vertical(
           top: Radius.circular(20),
         ),
       ),
@@ -36,7 +36,7 @@ class PaymentScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 20),
-          Text(
+          const Text(
             "Ödeme Detayları",
             style: TextStyle(
               fontSize: 20,
@@ -48,13 +48,13 @@ class PaymentScreen extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
+              const Text(
                 "Seçilen Plan:",
                 style: TextStyle(fontSize: 16, color: Colors.black54),
               ),
               Text(
                 planName,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                   color: Colors.black87,
@@ -66,13 +66,13 @@ class PaymentScreen extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
+              const Text(
                 "Toplam Tutar:",
                 style: TextStyle(fontSize: 16, color: Colors.black54),
               ),
               Text(
                 planPrice,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                   color: Colors.black87,
@@ -87,7 +87,10 @@ class PaymentScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const CheckoutScreen(),
+                    builder: (context) => CheckoutScreen(
+                      planName: planName,
+                      planPrice: planPrice,
+                    ),
                   ),
                 );
               },

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kpssapp/ortak/ProVersionPage.dart';
+import 'package:kpssapp/screens/ProVersionPage.dart';
 
 class ProButton extends StatelessWidget {
   const ProButton({super.key, required Null Function() onPressed});

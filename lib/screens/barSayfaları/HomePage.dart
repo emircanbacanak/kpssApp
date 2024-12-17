@@ -14,7 +14,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final DateTime examDate = DateTime.utc(2024, 12, 8, 15, 00);
+  final DateTime examDate = DateTime.utc(2024, 12, 18, 9, 00);
   late Timer _timer;
   Duration remainingTime = Duration.zero;
 
