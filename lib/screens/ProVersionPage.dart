@@ -24,7 +24,7 @@ class _ProVersionPageState extends State<ProVersionPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const FeaturesList(), // Avantajlar listesi
-              const SizedBox(height: 30),
+              const SizedBox(height: 10),
               PlanList(
                 // Planlar listesi
                 selectedPlan: selectedPlan,
@@ -34,7 +34,7 @@ class _ProVersionPageState extends State<ProVersionPage> {
                   });
                 },
               ),
-              const SizedBox(height: 30),
+              const SizedBox(height: 10),
               Center(
                 child: ElevatedButton(
                   onPressed: () {
