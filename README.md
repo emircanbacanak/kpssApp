@@ -53,6 +53,34 @@
    flutter pub get
 
 5. Uygulamayı çalıştırın:
-  ```bash
-  flutter run
+   ```bash
+   flutter run
+
+
+##Kullanım
+- Uygulamayı açtıktan sonra, ana menüden çalışmak istediğiniz konuyu seçebilirsiniz.
+- Her konunun sonunda ilgili testleri çözerek bilginizi pekiştirebilirsiniz.
+- Profil bölümünden ilerlemenizi ve test sonuçlarınızı takip edebilirsiniz.
+- Ayarlar menüsünden bildirimleri ve diğer tercihlerinizi özelleştirebilirsiniz.
+
+
+##Katkıda Bulunma
+Katkılarınızı memnuniyetle karşılıyoruz! Lütfen katkıda bulunmadan önce aşağıdaki adımları izleyin:
+
+1. Projeyi forklayın.
+2. Yeni bir dal (branch) oluşturun:
+   ```bash
+   git checkout -b feature/AmazingFeature
+3. Değişikliklerinizi yapın ve commit edin:
+   ```bash
+   git commit -m 'Add some AmazingFeature'
+4. Dalınıza push edin:
+   ```bash
+   git push origin feature/AmazingFeature
+5. Bir çekme isteği (pull request) oluşturun.
+
+##İletişim
+Herhangi bir sorunuz veya öneriniz için lütfen emircanbcnk@gmail.com adresine e-posta gönderin.   
+   
+
    
