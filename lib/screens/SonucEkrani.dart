@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:kpssapp/screens/SoruCevapSayfasi.dart';
 
 class SonucEkrani extends StatelessWidget {
   final int toplamSoru;
@@ -22,79 +21,113 @@ class SonucEkrani extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final yuzdelik = ((dogruSayisi / toplamSoru) * 100).toStringAsFixed(2);
+    final net = dogruSayisi - (yanlisSayisi / 4);
 
     return Scaffold(
-      appBar:
-          AppBar(title: const Text("Sonuçlar"), backgroundColor: Colors.teal),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Center(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: const Text(
+          "Sınav Sonucunuz",
+          style: TextStyle(color: Colors.black, fontSize: 20),
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.yellow,
+        elevation: 0,
+      ),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(24.0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const Text(
-                "Sonuç Tablosu",
+                "PUANINIZ",
                 style: TextStyle(
-                  fontSize: 26,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.teal,
+                  fontSize: 22,
+                  color: Colors.black87,
                 ),
-                textAlign: TextAlign.center,
               ),
-              const SizedBox(height: 20),
-              DataTable(
-                columnSpacing: 40.0,
-                headingRowColor: WidgetStateColor.resolveWith(
-                  (states) => Colors.teal.shade100,
+              const SizedBox(height: 10),
+              Text(
+                "$yuzdelik / 100",
+                style: const TextStyle(
+                  fontSize: 38,
+                  fontWeight: FontWeight.w300,
+                  color: Colors.black,
                 ),
-                columns: const [
-                  DataColumn(
-                      label: Text('Kategori',
-                          style: TextStyle(fontWeight: FontWeight.bold))),
-                  DataColumn(
-                      label: Text('Değer',
-                          style: TextStyle(fontWeight: FontWeight.bold))),
-                ],
-                rows: [
-                  DataRow(cells: [
-                    const DataCell(Text("Toplam Soru")),
-                    DataCell(Text(toplamSoru.toString()))
-                  ]),
-                  DataRow(cells: [
-                    const DataCell(Text("Doğru Sayısı")),
-                    DataCell(Text(dogruSayisi.toString()))
-                  ]),
-                  DataRow(cells: [
-                    const DataCell(Text("Yanlış Sayısı")),
-                    DataCell(Text(yanlisSayisi.toString()))
-                  ]),
-                  DataRow(cells: [
-                    const DataCell(Text("Boş Sayısı")),
-                    DataCell(Text(bosSayisi.toString()))
-                  ]),
-                  DataRow(cells: [
-                    const DataCell(Text("Başarı Yüzdesi")),
-                    DataCell(Text("$yuzdelik%"))
-                  ]),
-                ],
               ),
-              const SizedBox(height: 20),
-              ElevatedButton(
+              const SizedBox(height: 30),
+              _buildStatRow("DOĞRU SAYISI", dogruSayisi),
+              _buildStatRow("YANLIŞ SAYISI", yanlisSayisi),
+              _buildStatRow("NET", net.toStringAsFixed(2)),
+              const SizedBox(height: 40),
+              // Button
+              _buildYellowButton(
+                text: "ANASAYFA",
                 onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => SoruCevapSayfasi(
-                        konuAdi: konuAdi, // Hangi konuya dönüleceği bilgisi
-                        sorular: sorular, // Sorular listesi
-                      ),
-                    ),
-                  );
+                  Navigator.pop(context);
                 },
-                child: const Text("Tekrar Çöz"),
               ),
             ],
           ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildStatRow(String title, dynamic value) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: Row(
+        children: [
+          const Expanded(flex: 1, child: SizedBox()),
+          const Expanded(flex: 1, child: SizedBox()),
+          Expanded(
+            flex: 3,
+            child: Text(
+              title,
+              style: const TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w500,
+                color: Colors.black87,
+              ),
+            ),
+          ),
+          Expanded(
+            flex: 2,
+            child: Text(
+              value.toString(),
+              textAlign: TextAlign.right,
+              style: const TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
+            ),
+          ),
+          const Expanded(flex: 1, child: SizedBox()),
+          const Expanded(flex: 1, child: SizedBox()),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildYellowButton(
+      {required String text, required VoidCallback onPressed}) {
+    return ElevatedButton(
+      onPressed: onPressed,
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.yellow,
+        padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      ),
+      child: Text(
+        text,
+        style: const TextStyle(
+          color: Colors.black,
+          fontWeight: FontWeight.bold,
+          fontSize: 16,
         ),
       ),
     );

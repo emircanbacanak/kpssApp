@@ -27,7 +27,6 @@ class FavoriteTopics {
   static List<Map<String, dynamic>> _favorites = [];
   static List<Map<String, dynamic>> get favorites => _favorites;
 
-  // favorileri cihaz hafızasından yükleme yeri
   static Future<void> loadFavorites() async {
     final prefs = await SharedPreferences.getInstance();
     final String? favoritesString = prefs.getString(_favoritesKey);
@@ -37,14 +36,12 @@ class FavoriteTopics {
     }
   }
 
-  // Favorileri cihaz hafızasına kaydet
   static Future<void> saveFavorites() async {
     final prefs = await SharedPreferences.getInstance();
     final String favoritesString = jsonEncode(_favorites);
     await prefs.setString(_favoritesKey, favoritesString);
   }
 
-  // Bir konuyu favorilere ekleme veya çıkarma
   static Future<void> toggleFavorite(Map<String, dynamic> topic) async {
     final String title = topic['title'];
     if (_favorites.any((fav) => fav['title'] == title)) {
@@ -55,15 +52,12 @@ class FavoriteTopics {
     await saveFavorites();
   }
 
-  // Konunun favori olup olmadığını kontrol et
   static bool isFavorite(String title) {
     return _favorites.any((topic) => topic['title'] == title);
   }
 
-  // `pageName` değerine göre ilgili widget'ı döndür
   static Widget getPageWidget(String pageName) {
     switch (pageName) {
-      // Türkçe sayfalar
       case 'KpssDilBilgisiPage':
         return const KpssDilBilgisiPage();
       case 'KpssParagrafPage':
@@ -79,7 +73,6 @@ class FavoriteTopics {
       case 'KpssCumleBilgisiPage':
         return const KpssCumleBilgisiPage();
 
-      // Matematik sayfaları
       case 'KpssSayilarPage':
         return const KpssSayilarPage();
       case 'KpssTemelKavramlarPage':
@@ -95,7 +88,6 @@ class FavoriteTopics {
       case 'KpssTamSayilarPage':
         return const KpssTamSayilarPage();
 
-      // Alan bilgisi sayfaları
       case 'KpssAnayasaHukukuPage':
         return const KpssAnayasaHukukuPage();
       case 'KpssIdareHukukuPage':
@@ -107,7 +99,6 @@ class FavoriteTopics {
       case 'EkonomiPage':
         return const EkonomiPage();
 
-      // Sayfa yoksa
       default:
         return const Scaffold(
           body: Center(
