@@ -23,13 +23,13 @@
 
 ## Ekran Görüntüleri
 
-![Ana Sayfa](path_to_screenshot1.png)  
+![Ana Sayfa](https://github.com/emircanbacanak/kpssApp/blob/main/lib/ss/Giris_yap.png)  
 *Ana sayfa ekran görüntüsü*
 
-![Konu Anlatımı](path_to_screenshot2.png)  
+![Konu Anlatımı](https://github.com/emircanbacanak/kpssApp/blob/main/lib/ss/Konu_anlatim.png)  
 *Konu anlatımı ekranı*
 
-![Test Çözme](path_to_screenshot3.png)  
+![Test Çözme](https://github.com/emircanbacanak/kpssApp/blob/main/lib/ss/Soru_coz.png)  
 *Test çözme ekranı*
 
 ## Gereksinimler
